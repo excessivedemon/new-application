@@ -1,0 +1,11 @@
+{
+  "name": "new-application",
+  "version": "1.0.0",
+  "description": "new-application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}
+

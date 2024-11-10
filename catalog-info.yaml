@@ -1,0 +1,40 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: new-application
+  description: new-application
+  annotations:
+    github.com/project-slug: excessivedemon/new-application
+    backstage.io/techdocs-ref: dir:./docs 
+    backstage.io/api-docs: new-application-api
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guest
+  providesApis:
+    - default/new-application-api
+
+---
+
+# API entity
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: new-application-api
+  description: API for new-application
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: user:guest
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: new-application API
+      version: 1.0.0
+    paths:
+      /:
+        get:
+          summary: Health check endpoint
+          responses:
+            '200':
+              description: Successful response
